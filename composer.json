@@ -1,7 +1,7 @@
 {
-    "name": "miladimos/package-skeleton",
+    "name": "laravelir/dashboarder",
     "description": "test description",
-    "homepage": "https://github.com/miladimos/package-skeleton",
+    "homepage": "https://github.com/laravelir/dashboarder",
     "type": "library",
     "keywords": [
         "laravel",
@@ -14,33 +14,33 @@
     "authors": [
         {
             "name": "miladimos",
-            "email": "message.tome1331@gmail.com",
+            "email": "miladimos@outlook.com",
             "role": "maintaner",
             "homepage": "https://github.com/miladimos"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Miladimos\\Package\\": "src/"
+            "Laravelir\\Dashboarder\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Miladimos\\Package\\Tests\\": "tests"
+            "Laravelir\\Dashboarder\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "PackageServiceProvider"
+                "DashboarderServiceProvider"
             ],
             "aliases": {
-                "Package": "Miladimos\\Package\\Facades\\PackageFacade"
+                "Dashboarder": "Laravelir\\Dashboarder\\Facades\\DashboarderFacade"
             }
         }
     },
     "require": {
-        "php": ">=7.2"
+        "php": ">=7.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.4"

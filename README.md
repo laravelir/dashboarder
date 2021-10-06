@@ -1,32 +1,32 @@
-- [![Starts](https://img.shields.io/github/stars/miladimos/laravel-?style=flat&logo=github)](https://github.com/miladimos/laravel-/forks)
-- [![Forks](https://img.shields.io/github/forks/miladimos/laravel-?style=flat&logo=github)](https://github.com/miladimos/laravel-/stargazers)
-  [![Total Downloads](https://img.shields.io/packagist/dt/miladimos/laravel-.svg?style=flat-square)](https://packagist.org/packages/miladimos/laravel-)
+- [![Starts](https://img.shields.io/github/stars/laravelir/dashboarder?style=flat&logo=github)](https://github.com/laravelir/dashboarder/forks)
+- [![Forks](https://img.shields.io/github/forks/laravelir/dashboarder?style=flat&logo=github)](https://github.com/laravelir/dashboarder/stargazers)
+  [![Total Downloads](https://img.shields.io/packagist/dt/laravelir/laravel-.svg?style=flat-square)](https://packagist.org/packages/laravelir/laravel-)
 
-- [English](README-en.md)
 
-# پکیج لاراولی
+# laravel Package
 
-یه پکیج خفن
+A package for fun
 
-### نصب
+### Installation
 
-1.  برای نصب در مسیر روت پروژه خود دستور زیر را در ریشه پروژه اجرا کنید
+1. Run the command below to add this package:
 
 ```
-composer require miladimos/laravel-
+composer require laravelir/dashboarder
 ```
 
 2. Open your config/app.php and add the following to the providers array:
 
 ```php
-Miladimos\Package\Providers\PackageServiceProvider::class,
+Laravelir\Dashboarder\Providers\DashboarderServiceProvider::class,
 ```
 
-3. Run the command below to publish the package config file config/package.php:
+3. Run the command below to publish the package config file config/dashboarder.php:
 
 ```
 php artisan vendor:publish
 ```
+
 
 ## Testing
 
@@ -42,10 +42,15 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
+## Security Vulnerabilities
+
+Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [:miladimos](https://github.com/:miladimos)
 - [All Contributors](../../contributors)
 
 ## License
 
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

@@ -1,17 +1,17 @@
 <?php
 
-namespace Miladimos\Package\Providers;
+namespace Laravelir\Dashboarder\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Miladimos\Package\Console\Commands\InstallPackageCommand;
-use Miladimos\Package\Facades\PackageFacade;
+use Laravelir\Dashboarder\Console\Commands\InstallDashboarderCommand;
+use Laravelir\Dashboarder\Facades\DashboarderFacade;
 
-class PackageServiceProvider extends ServiceProvider
+class DashboarderServiceProvider extends ServiceProvider
 {
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . "/../../config/config.php", 'package');
+        $this->mergeConfigFrom(__DIR__ . "/../../config/dashboarder.php", 'dashboarder');
 
         $this->registerFacades();
     }
@@ -33,29 +33,29 @@ class PackageServiceProvider extends ServiceProvider
 
     private function registerFacades()
     {
-        $this->app->bind('package', function ($app) {
-            return new PackageFacade();
+        $this->app->bind('dashboarder', function ($app) {
+            return new DashboarderFacade();
         });
     }
 
     private function registerPublishes()
     {
         $this->publishes([
-            __DIR__ . '/../../config/config.php' => config_path('package.php')
-        ], 'package-config');
+            __DIR__ . '/../../config/dashboarder.php' => config_path('dashboarder.php')
+        ], 'dashboarder-config');
     }
 
     private function registerCommands()
     {
         $this->commands([
-            InstallPackageCommand::class,
+            InstallDashboarderCommand::class,
         ]);
     }
 
     public function publishConfig()
     {
         $this->publishes([
-            __DIR__ . '/../../config/package.php' => config_path('package.php')
-        ], 'package-config');
+            __DIR__ . '/../../config/dashboarder.php' => config_path('dashboarder.php')
+        ], 'dashboarder-config');
     }
 }

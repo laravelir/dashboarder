@@ -1,27 +1,27 @@
 <?php
 
-namespace Miladimos\Package\Console\Commands;
+namespace Laravelir\Dashboarder\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class InstallPackageCommand extends Command
+class InstallDashboarderCommand extends Command
 {
-    protected $signature = 'package:install';
+    protected $signature = 'dashboarder:install';
 
-    protected $description = 'Install the package Package';
+    protected $description = 'Install the dashboarder Dashboarder';
 
     public function handle()
     {
-        $this->line("\t... Welcome To Package Installer ...");
+        $this->line("\t... Welcome To Dashboarder Installer ...");
 
 
-        $this->info("Package Successfully Installed.\n");
+        $this->info("Dashboarder Successfully Installed.\n");
         $this->info("\t\tGood Luck.");
     }
 
     //       //config
-    //       if (File::exists(config_path('package.php'))) {
-    //         $confirm = $this->confirm("package.php already exist. Do you want to overwrite?");
+    //       if (File::exists(config_path('dashboarder.php'))) {
+    //         $confirm = $this->confirm("dashboarder.php already exist. Do you want to overwrite?");
     //         if ($confirm) {
     //             $this->publishConfig();
     //             $this->info("config overwrite finished");
@@ -34,8 +34,8 @@ class InstallPackageCommand extends Command
     //     }
 
     //     //assets
-    //     if (File::exists(public_path('package'))) {
-    //         $confirm = $this->confirm("package directory already exist. Do you want to overwrite?");
+    //     if (File::exists(public_path('dashboarder'))) {
+    //         $confirm = $this->confirm("dashboarder directory already exist. Do you want to overwrite?");
     //         if ($confirm) {
     //             $this->publishAssets();
     //             $this->info("assets overwrite finished");
@@ -67,7 +67,7 @@ class InstallPackageCommand extends Command
     // private function publishConfig()
     // {
     //     $this->call('vendor:publish', [
-    //         '--provider' => "Miladimos\package\Providers\packageServiceProvider",
+    //         '--provider' => "Laravelir\dashboarder\Providers\dashboarderServiceProvider",
     //         '--tag'      => 'config',
     //         '--force'    => true
     //     ]);
@@ -76,7 +76,7 @@ class InstallPackageCommand extends Command
     // private function publishMigration()
     // {
     //     $this->call('vendor:publish', [
-    //         '--provider' => "Miladimos\package\Providers\packageServiceProvider",
+    //         '--provider' => "Laravelir\dashboarder\Providers\dashboarderServiceProvider",
     //         '--tag'      => 'migrations',
     //         '--force'    => true
     //     ]);
@@ -85,7 +85,7 @@ class InstallPackageCommand extends Command
     // private function publishAssets()
     // {
     //     $this->call('vendor:publish', [
-    //         '--provider' => "Miladimos\package\Providers\packageServiceProvider",
+    //         '--provider' => "Laravelir\dashboarder\Providers\dashboarderServiceProvider",
     //         '--tag'      => 'assets',
     //         '--force'    => true
     //     ]);

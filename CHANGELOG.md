@@ -1,4 +1,4 @@
 # Changelog
 
-All notable changes to `vendor/package` will be documented in this file.
+All notable changes to `laravelir/dashboarder` will be documented in this file.
 
