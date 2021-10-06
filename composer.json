@@ -1,0 +1,50 @@
+{
+    "name": "miladimos/package-skeleton",
+    "description": "test description",
+    "homepage": "https://github.com/miladimos/package-skeleton",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "laravel-package",
+        "laravel support",
+        "lumen packages",
+        "laravel packages",
+        "lumen support"
+    ],
+    "authors": [
+        {
+            "name": "miladimos",
+            "email": "message.tome1331@gmail.com",
+            "role": "maintaner",
+            "homepage": "https://github.com/miladimos"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Miladimos\\Package\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Miladimos\\Package\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PackageServiceProvider"
+            ],
+            "aliases": {
+                "Package": "Miladimos\\Package\\Facades\\PackageFacade"
+            }
+        }
+    },
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    },
+    "minimum-stability": "stable",
+    "license": "MIT"
+}
