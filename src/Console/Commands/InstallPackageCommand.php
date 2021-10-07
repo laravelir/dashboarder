@@ -4,7 +4,7 @@ namespace Laravelir\Dashboarder\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class InstallDashboarderCommand extends Command
+class InstallPackageCommand extends Command
 {
     protected $signature = 'dashboarder:install';
 

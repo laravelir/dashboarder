@@ -32,7 +32,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "DashboarderServiceProvider"
+                "Laravelir\\Dashboarder\\Providers\\DashboarderServiceProvider"
             ],
             "aliases": {
                 "Dashboarder": "Laravelir\\Dashboarder\\Facades\\DashboarderFacade"

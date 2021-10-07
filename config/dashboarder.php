@@ -4,16 +4,19 @@
 return [
     'routes' => [
         'prefix' => 'dashboard',
+        'middleware' => [],
     ],
 
     'locales' => [
         'en' => [
             'title' => 'English',
             'flag' => '',
+            'dir' => 'ltr',
         ],
         'fa' => [
             'title' => 'فارسی',
             'flag' => '',
+            'dir' => 'rtl',
         ],
     ],
 

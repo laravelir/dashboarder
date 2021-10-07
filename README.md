@@ -7,6 +7,8 @@
 
 A laravel package for generate admin dashboard dynamically based on [Tabler](https://github.com/tabler/tabler) template
 
+use livewire - alpinejs
+
 ### Installation
 
 1. Run the command below to add this package:
