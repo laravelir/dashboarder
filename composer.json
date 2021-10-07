@@ -1,15 +1,18 @@
 {
     "name": "laravelir/dashboarder",
-    "description": "a laravel package to create dashboard admin dynamically",
+    "description": "a powerful, flexible laravel file manager",
     "homepage": "https://github.com/laravelir/dashboarder",
     "type": "library",
     "keywords": [
         "laravel",
-        "laravel-package",
+        "dashboarder",
         "laravel support",
         "lumen packages",
         "laravel packages",
-        "lumen support"
+        "lumen support",
+        "file uploader",
+        "uploader",
+        "file manager"
     ],
     "authors": [
         {
@@ -27,11 +30,6 @@
             "./src/Helpers/helpers.php"
         ]
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Laravelir\\Dashboarder\\Tests\\": "tests"
-        }
-    },
     "extra": {
         "laravel": {
             "providers": [
@@ -45,8 +43,6 @@
     "require": {
         "php": ">=7.4"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^9.4"
-    },
+    "minimum-stability": "stable",
     "license": "MIT"
 }
