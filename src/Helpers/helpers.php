@@ -10,6 +10,6 @@ if (!function_exists('dashboarder_path')) {
 if (!function_exists('dashboarder_asset')) {
     function dashboarder_asset($asset)
     {
-        return realpath(__DIR__ . '../../../' . 'resources/' . trim($asset));
+        return asset('dashboarder' . trim($asset));
     }
 }

@@ -31,7 +31,6 @@ class DashboarderServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->registerCommands();
-            $this->registerPublishes();
             $this->publishConfig();
             $this->registerTranslations();
         }
@@ -46,6 +45,10 @@ class DashboarderServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../../resources/views' => resource_path('views/laravelir/dashboarder'),
         ]);
+
+        $this->publishes([
+            __DIR__ . '/../../resources/statics' => public_path('dashboarder'),
+        ], 'dashboarder-assets');
     }
 
     private function registerFacades()
@@ -62,13 +65,6 @@ class DashboarderServiceProvider extends ServiceProvider
         ]);
     }
 
-    private function registerPublishes()
-    {
-        $this->publishes([
-            __DIR__ . '/../../config/dashboarder.php' => config_path('dashboarder.php')
-        ], 'dashboarder-config');
-    }
-
     public function publishConfig()
     {
         $this->publishes([
@@ -81,8 +77,8 @@ class DashboarderServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'dashboarder');
 
         $this->publishes([
-            __DIR__ . '/../resources/lang' => resource_path('lang/miladimos/laravel-dashboarder'),
-        ]);
+            __DIR__ . '/../../resources/lang' => resource_path('lang/laravelir/dashboarder'),
+        ], 'dashboarder-langs');
     }
 
     private function registerRoutes()
