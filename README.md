@@ -1,11 +1,11 @@
 - [![Starts](https://img.shields.io/github/stars/laravelir/dashboarder?style=flat&logo=github)](https://github.com/laravelir/dashboarder/forks)
 - [![Forks](https://img.shields.io/github/forks/laravelir/dashboarder?style=flat&logo=github)](https://github.com/laravelir/dashboarder/stargazers)
-  [![Total Downloads](https://img.shields.io/packagist/dt/laravelir/laravel-.svg?style=flat-square)](https://packagist.org/packages/laravelir/laravel-)
+- [![Total Downloads](https://img.shields.io/packagist/dt/laravelir/laravel-.svg?style=flat-square)](https://packagist.org/packages/laravelir/dashboarder)
 
 
-# laravel Package
+# Laravel Dashboarder
 
-A package for fun
+A laravel package for generate admin dashboard dynamically based on [Tabler](https://github.com/tabler/tabler) template
 
 ### Installation
 
@@ -21,10 +21,10 @@ composer require laravelir/dashboarder
 Laravelir\Dashboarder\Providers\DashboarderServiceProvider::class,
 ```
 
-3. Run the command below to publish the package config file config/dashboarder.php:
+3. Run the command below to install:
 
 ```
-php artisan vendor:publish
+php artisan dashboarder:install
 ```
 
 
@@ -48,9 +48,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:miladimos](https://github.com/:miladimos)
-- [All Contributors](../../contributors)
-
+- [miladimos](https://github.com/miladimos)
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
