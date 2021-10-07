@@ -41,10 +41,10 @@ class DashboarderServiceProvider extends ServiceProvider
 
     private function registerViews()
     {
-        $this->loadViewsFrom(__DIR__ . '/../../frontend', 'dashboarder');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'dashboarder');
 
         $this->publishes([
-            __DIR__ . '/../../frontend' => resource_path('views/miladimos/laravel-dashboarder'),
+            __DIR__ . '/../../resources/views' => resource_path('views/laravelir/dashboarder'),
         ]);
     }
 

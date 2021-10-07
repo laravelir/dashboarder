@@ -4,7 +4,7 @@
 return [
     'routes' => [
         'prefix' => 'dashboard',
-        'middleware' => [],
+        'middleware' => ['web',],
     ],
 
     'locales' => [
