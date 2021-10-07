@@ -2,6 +2,7 @@
     "name": "laravelir/dashboarder",
     "description": "a powerful, flexible laravel file manager",
     "homepage": "https://github.com/laravelir/dashboarder",
+    "version": "0.1.2",
     "type": "library",
     "keywords": [
         "laravel",
