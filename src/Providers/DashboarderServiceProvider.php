@@ -2,10 +2,12 @@
 
 namespace Laravelir\Dashboarder\Providers;
 
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Laravelir\Dashboarder\Console\Commands\InstallPackageCommand;
 use Laravelir\Dashboarder\Facades\DashboarderFacade;
+use Laravelir\Dashboarder\Console\Commands\InstallPackageCommand;
 
 class DashboarderServiceProvider extends ServiceProvider
 {
@@ -29,14 +31,12 @@ class DashboarderServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        if ($this->app->runningInConsole()) {
-            $this->registerCommands();
-            $this->publishConfig();
-            $this->registerTranslations();
-            $this->registerAssets();
-        }
-
+        $this->registerCommands();
+        $this->publishConfig();
+        $this->registerTranslations();
+        $this->registerAssets();
         $this->registerRoutes();
+        $this->registerBladeDirectives();
     }
 
     private function registerViews()
@@ -64,9 +64,12 @@ class DashboarderServiceProvider extends ServiceProvider
 
     private function registerCommands()
     {
-        $this->commands([
-            InstallPackageCommand::class,
-        ]);
+        if ($this->app->runningInConsole()) {
+
+            $this->commands([
+                InstallPackageCommand::class,
+            ]);
+        }
     }
 
     public function publishConfig()
@@ -99,5 +102,27 @@ class DashboarderServiceProvider extends ServiceProvider
             'middleware' => config('dashboarder.routes.middleware'),
             'as' => 'dashboarder.'
         ];
+    }
+
+    protected function publishMigrations()
+    {
+        if (empty(File::glob(database_path('migrations/*_create_varbox_tables.php')))) {
+            $timestamp = date('Y_m_d_His', time());
+
+            $this->publishes([
+                __DIR__ . '/../database/migrations/create_varbox_tables.stub' => database_path() . "/migrations/{$timestamp}_create_varbox_tables.php",
+            ], 'varbox-migrations');
+        }
+    }
+
+    protected function registerBladeDirectives()
+    {
+        Blade::directive('format', function ($expression) {
+            return "<?php echo ($expression)->format('m/d/Y H:i'); ?>";
+        });
+
+        Blade::directive('config', function ($key) {
+            return "<?php echo config('dashboarder.' . $key); ?>";
+        });
     }
 }

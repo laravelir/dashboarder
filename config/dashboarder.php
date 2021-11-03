@@ -38,7 +38,7 @@ return [
          * prefix_title + title_separator + page_title
          * separators: | -
          *
-        */
+         */
         'title_separator' => '-'
     ],
 ];

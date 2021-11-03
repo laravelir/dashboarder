@@ -23,11 +23,48 @@ composer require laravelir/dashboarder
 Laravelir\Dashboarder\Providers\DashboarderServiceProvider::class,
 ```
 
-3. Run the command below to install:
+1. Run the command below to install:
 
 ```
 php artisan dashboarder:install
 ```
+
+4. Run the command below to migrate tables and run seeders:
+
+```
+php artisan migrate
+
+php artisan db:seed --class="DashboarderSeeders"
+```
+
+#### Environment Variables
+Append the following to `.env` file:
+```
+
+```
+
+### Using
+
+
+after install you can accessing panel by below route:
+
+`route.prefix`/dashboard 
+
+you can login into dashboarder by default admin user created by seeders:
+
+email: `admin@gmail.com` 
+password: `password`
+
+after login you must change it for security!!!
+
+
+### Comands
+
+
+
+
+
+
 
 
 ## Testing
