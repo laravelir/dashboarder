@@ -30,4 +30,15 @@ return [
             ['title' => 'CREATIVE TIM', 'link' => 'https://www.creative-tim.com/'],
         ],
     ],
+
+    'seo' => [
+        'prefix_title' => 'Dashboarder',
+
+        /**
+         * prefix_title + title_separator + page_title
+         * separators: | -
+         *
+        */
+        'title_separator' => '-'
+    ],
 ];

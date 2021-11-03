@@ -1,107 +1,9 @@
-<!doctype html>
-<!--
-* Tabler - Premium and Open Source dashboard template with responsive and high quality UI.
-* @version 1.0.0-beta3
-* @link https://tabler.io
-* Copyright 2018-2021 The Tabler Authors
-* Copyright 2018-2021 codecalm.net Paweł Kuna
-* Copyright 2021-2021 laravelir/dashboarder Miladimos
-* Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
--->
-<html lang="{{ app()->getLocale() }}">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="Powered By" content="Laravelir - http://github.com/laravelir">
-
-    <title>Dashboard - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
-    <!-- CSS files -->
-    <link href="{{ dashboarder_asset('/css/tabler.min.css') }}" rel="stylesheet" />
-    <link href="{{ dashboarder_asset('/css/tabler-flags.min.css') }}" rel="stylesheet" />
-    <link href="{{ dashboarder_asset('/css/tabler-payments.min.css') }}" rel="stylesheet" />
-    <link href="{{ dashboarder_asset('/css/tabler-vendors.min.css') }}" rel="stylesheet" />
-    <link href="{{ dashboarder_asset('/css/demo.min.css') }}" rel="stylesheet" />
-</head>
-
+@include('dashboarder::layouts.header')
 
 <body class="antialiased">
     <div class="wrapper">
         @include('dashboarder::sections.sidebar')
-        <header class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none">
-            <div class="container-xl">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-nav flex-row order-md-last">
-                    <div class="nav-item dropdown d-none d-md-flex me-3">
-                        <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
-                            aria-label="Show notifications">
-                            <!-- Download SVG icon from http://tabler-icons.io/i/bell -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path
-                                    d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
-                                <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
-                            </svg>
-                            <span class="badge bg-red"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad amet
-                                    consectetur exercitationem fugiat in ipsa ipsum, natus odio quidem quod repudiandae
-                                    sapiente. Amet debitis et magni maxime necessitatibus ullam.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
-                            aria-label="Open user menu">
-                            <span class="avatar avatar-sm"
-                                style="background-image: url(./static/avatars/000m.jpg)"></span>
-                            <div class="d-none d-xl-block ps-2">
-                                <div>Paweł Kuna</div>
-                                <div class="mt-1 small text-muted">UI Designer</div>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                            <a href="#" class="dropdown-item">Set status</a>
-                            <a href="#" class="dropdown-item">Profile & account</a>
-                            <a href="#" class="dropdown-item">Feedback</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Logout</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar-menu">
-                    <div>
-                        <form action="." method="get">
-                            <div class="input-icon">
-                                <span class="input-icon-addon">
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/search -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <circle cx="10" cy="10" r="7" />
-                                        <line x1="21" y1="21" x2="15" y2="15" />
-                                    </svg>
-                                </span>
-                                <input type="text" class="form-control" placeholder="Search…"
-                                    aria-label="Search in website">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </header>
+        @include('dashboarder::sections.topbar')
         <div class="page-wrapper">
             <div class="container-xl">
                 <!-- Page title -->
@@ -126,7 +28,6 @@
                                 </span>
                                 <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal"
                                     data-bs-target="#modal-report">
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
                                         height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                                         fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -138,7 +39,6 @@
                                 </a>
                                 <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal"
                                     data-bs-target="#modal-report" aria-label="Create new report">
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
                                         height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                                         fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -281,9 +181,8 @@
                                         <div class="subheader">Active users</div>
                                         <div class="ms-auto lh-1">
                                             <div class="dropdown">
-                                                <a class="dropdown-toggle text-muted" href="#"
-                                                    data-bs-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">Last 7 days</a>
+                                                <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">Last 7 days</a>
                                                 <div class="dropdown-menu dropdown-menu-end">
                                                     <a class="dropdown-item active" href="#">Last 7 days</a>
                                                     <a class="dropdown-item" href="#">Last 30 days</a>
@@ -1986,49 +1885,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer footer-transparent d-print-none">
-                <div class="container">
-                    <div class="row text-center align-items-center flex-row-reverse">
-                        <div class="col-lg-auto ms-lg-auto">
-                            <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item"><a href="./docs/index.html"
-                                        class="link-secondary">Documentation</a></li>
-                                <li class="list-inline-item"><a href="./license.html"
-                                        class="link-secondary">License</a></li>
-                                <li class="list-inline-item"><a href="https://github.com/tabler/tabler" target="_blank"
-                                        class="link-secondary" rel="noopener">Source code</a></li>
-                                <li class="list-inline-item">
-                                    <a href="https://github.com/sponsors/codecalm" target="_blank"
-                                        class="link-secondary" rel="noopener">
-                                        <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            class="icon text-pink icon-filled icon-inline" width="24" height="24"
-                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path
-                                                d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
-                                        </svg>
-                                        Sponsor
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-12 col-lg-auto mt-3 mt-lg-0">
-                            <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item">
-                                    Copyright &copy; 2021
-                                    <a href="." class="link-secondary">Tabler</a>.
-                                    All rights reserved.
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="./changelog.html" class="link-secondary" rel="noopener">v1.0.0-beta3</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            @include('dashboarder::sections.page-footer')
         </div>
     </div>
     <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
@@ -2095,7 +1952,6 @@
                                 <label class="form-label">Visibility</label>
                                 <select class="form-select">
                                     <option value="1" selected>Private</option>
-                                    <option value="2">Public</option>
                                     <option value="3">Hidden</option>
                                 </select>
                             </div>
@@ -2144,13 +2000,7 @@
         </div>
     </div>
 
-    <!-- Libs JS -->
-    <script src="{{ dashboarder_asset('/js/libs/apexcharts.min.js') }}"></script>
-    <!-- Tabler Core -->
-    <script src="{{ dashboarder_asset('/js/tabler.min.js') }}"></script>
-
-    <script src="{{ dashboarder_asset('/js/custom-libs.js') }}"></script>
-
+    @include('dashboarder::layouts.footer')
 </body>
 
 </html>
