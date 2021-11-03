@@ -3,6 +3,7 @@
 namespace Laravelir\Dashboarder\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
 
 class InstallPackageCommand extends Command
 {
@@ -14,38 +15,56 @@ class InstallPackageCommand extends Command
     {
         $this->line("\t... Welcome To Dashboarder Installer ...");
 
+        // config file
+        if (File::exists(config_path('dashboarder.php'))) {
+            $confirm = $this->confirm("dashboarder.php already exist. Do you want to overwrite?");
+            if ($confirm) {
+                $this->publishConfig();
+                $this->info("config overwrite finished");
+            } else {
+                $this->info("skipped config publish");
+            }
+        } else {
+            $this->publishConfig();
+        }
+
+        // assets
+        if (File::exists(public_path('dashboarder'))) {
+            $confirm = $this->confirm("public/dashboarder directory already exist. Do you want to overwrite?");
+            if ($confirm) {
+                $this->publishAssets();
+                $this->info("assets overwrite finished");
+            } else {
+                $this->error("you must publish assets");
+                die;
+            }
+        } else {
+            $this->publishAssets();
+        }
+
 
         $this->info("Dashboarder Successfully Installed.\n");
         $this->info("\t\tGood Luck.");
     }
 
-    //       //config
-    //       if (File::exists(config_path('dashboarder.php'))) {
-    //         $confirm = $this->confirm("dashboarder.php already exist. Do you want to overwrite?");
-    //         if ($confirm) {
-    //             $this->publishConfig();
-    //             $this->info("config overwrite finished");
-    //         } else {
-    //             $this->info("skipped config publish");
-    //         }
-    //     } else {
-    //         $this->publishConfig();
-    //         $this->info("config published");
-    //     }
+    private function publishConfig()
+    {
+        $this->call('vendor:publish', [
+            '--provider' => "Laravelir\Dashboarder\Providers\DashboarderServiceProvider",
+            '--tag'      => 'dashboarder-config',
+            '--force'    => true
+        ]);
+    }
 
-    //     //assets
-    //     if (File::exists(public_path('dashboarder'))) {
-    //         $confirm = $this->confirm("dashboarder directory already exist. Do you want to overwrite?");
-    //         if ($confirm) {
-    //             $this->publishAssets();
-    //             $this->info("assets overwrite finished");
-    //         } else {
-    //             $this->info("skipped assets publish");
-    //         }
-    //     } else {
-    //         $this->publishAssets();
-    //         $this->info("assets published");
-    //     }
+    private function publishAssets()
+    {
+        $this->call('vendor:publish', [
+            '--provider' => "Laravelir\Dashboarder\Providers\DashboarderServiceProvider",
+            '--tag'      => 'dashboarder-assets',
+            '--force'    => true
+        ]);
+    }
+
 
     //     //migration
     //     if (File::exists(database_path("migrations/$migrationFile"))) {
@@ -64,29 +83,11 @@ class InstallPackageCommand extends Command
     //     $this->call('migrate');
     // }
 
-    // private function publishConfig()
-    // {
-    //     $this->call('vendor:publish', [
-    //         '--provider' => "Laravelir\dashboarder\Providers\dashboarderServiceProvider",
-    //         '--tag'      => 'config',
-    //         '--force'    => true
-    //     ]);
-    // }
-
     // private function publishMigration()
     // {
     //     $this->call('vendor:publish', [
-    //         '--provider' => "Laravelir\dashboarder\Providers\dashboarderServiceProvider",
+    //         '--provider' => "Laravelir\Dashboarder\Providers\DashboarderServiceProvider",
     //         '--tag'      => 'migrations',
-    //         '--force'    => true
-    //     ]);
-    // }
-
-    // private function publishAssets()
-    // {
-    //     $this->call('vendor:publish', [
-    //         '--provider' => "Laravelir\dashboarder\Providers\dashboarderServiceProvider",
-    //         '--tag'      => 'assets',
     //         '--force'    => true
     //     ]);
     // }

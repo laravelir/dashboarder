@@ -3,7 +3,7 @@
 // config file for laravelir/dashboarder
 return [
     'routes' => [
-        'prefix' => 'dashboard',
+        'prefix' => 'dashboarder',
         'middleware' => ['web',],
     ],
 

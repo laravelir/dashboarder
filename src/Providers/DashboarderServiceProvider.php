@@ -33,6 +33,7 @@ class DashboarderServiceProvider extends ServiceProvider
             $this->registerCommands();
             $this->publishConfig();
             $this->registerTranslations();
+            $this->registerAssets();
         }
 
         $this->registerRoutes();
@@ -45,7 +46,10 @@ class DashboarderServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../../resources/views' => resource_path('views/laravelir/dashboarder'),
         ]);
+    }
 
+    private function registerAssets()
+    {
         $this->publishes([
             __DIR__ . '/../../resources/statics' => public_path('dashboarder'),
         ], 'dashboarder-assets');
