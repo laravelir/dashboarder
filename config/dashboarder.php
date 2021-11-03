@@ -7,7 +7,38 @@ return [
         'middleware' => ['web',],
     ],
 
+    'namespaces' => [
+        /**
+         * Application Namespace
+         * app()->getNamespace()
+         */
+        'application_namespace' => 'App',
+
+        /**
+         *  Path that contains Models
+         *
+         *  application_namespace + \ + models ==> App\Models
+         */
+        'models' => 'Models',
+
+        /**
+         *  Path that contains Controllers
+         *
+         *  application_namespace + \ + controllers ==> App\Http\Controllers
+         */
+        'controllers' => 'Http\Controllers',
+
+        /**
+         *  Path that contains Http Requests
+         *
+         *  application_namespace + \ + requests ==> App\Http\Requests
+         */
+        'requests' => 'Http\Requests',
+    ],
+
     'locales' => [
+        'default' => 'en',
+
         'en' => [
             'title' => 'English',
             'flag' => '',
