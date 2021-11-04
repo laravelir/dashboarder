@@ -34,6 +34,13 @@ return [
          *  application_namespace + \ + requests ==> App\Http\Requests
          */
         'requests' => 'Http\Requests',
+
+        /**
+         *  Path that contains created dashboarder views
+         *
+         *  resource_path() + \ + views + \ + dashboarder_views ==> resources\views\dashboarder
+         */
+        'dashboarder_views' => 'dashboarder',
     ],
 
     'locales' => [
@@ -72,4 +79,6 @@ return [
          */
         'title_separator' => '-'
     ],
+
+    'default_pagination' => 8,
 ];

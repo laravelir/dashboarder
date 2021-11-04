@@ -38,9 +38,9 @@ php artisan db:seed --class="DashboarderSeeders"
 ```
 
 #### Environment Variables
-Append the following to `.env` file:
+in install command automatic appends the following to `.env` file:
 ```
-
+DASHBOARDER_AUTH_USERNAME=email|username
 ```
 
 ### Using
