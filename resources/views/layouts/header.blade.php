@@ -8,7 +8,8 @@
 * Copyright 2021-2021 laravelir/dashboarder Miladimos
 * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
 -->
-<html lang="{{ app()->getLocale() }}">
+
+<html lang="{{ dashboarder_locale() }}" dir="{{ dashboarder_dir() }}">
 
 <head>
     <meta charset="utf-8" />
@@ -21,11 +22,7 @@
         @yield('page_title') </title>
 
     <!-- Start CSS files -->
-    <link href="{{ dashboarder_asset('/css/tabler.min.css') }}" rel="stylesheet" />
-    <link href="{{ dashboarder_asset('/css/tabler-flags.min.css') }}" rel="stylesheet" />
-    <link href="{{ dashboarder_asset('/css/tabler-payments.min.css') }}" rel="stylesheet" />
-    <link href="{{ dashboarder_asset('/css/tabler-vendors.min.css') }}" rel="stylesheet" />
-    <link href="{{ dashboarder_asset('/css/demo.min.css') }}" rel="stylesheet" />
+    @include('dashboarder::partials.template-styles')
     <!-- End CSS files -->
 
 </head>
