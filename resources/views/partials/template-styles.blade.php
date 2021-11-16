@@ -4,6 +4,8 @@
     <link href="{{ dashboarder_asset('/css/tabler-payments.rtl.min.css') }}" rel="stylesheet"/>
     <link href="{{ dashboarder_asset('/css/tabler-vendors.rtl.min.css') }}" rel="stylesheet"/>
     <link href="{{ dashboarder_asset('/css/demo.rtl.min.css') }}" rel="stylesheet"/>
+    <link href="{{ dashboarder_asset('/css/fonts.rtl.css') }}" rel="stylesheet"/>
+
 @else
     <link href="{{ dashboarder_asset('/css/tabler.min.css') }}" rel="stylesheet"/>
     <link href="{{ dashboarder_asset('/css/tabler-flags.min.css') }}" rel="stylesheet"/>

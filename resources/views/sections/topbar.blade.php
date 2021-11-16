@@ -22,7 +22,7 @@
                                 <line x1="21" y1="21" x2="15" y2="15" />
                             </svg>
                         </span>
-                        <input type="text" class="form-control" placeholder="Search …" aria-label="Search in website">
+                        <input type="text" class="form-control" placeholder="{{ dashboarder_lang('search') }} …" aria-label="Search in website">
                     </div>
                 </form>
             </div>

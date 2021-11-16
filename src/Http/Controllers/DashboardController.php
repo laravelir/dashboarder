@@ -8,7 +8,7 @@ class DashboardController extends BaseController
 {
     public function dashboard()
     {
-        config(['dashboarder.locales.default'=> 'en']);
+        // config(['dashboarder.locales.default'=> 'en']);
         return view('dashboarder::dashboard');
     }
 }

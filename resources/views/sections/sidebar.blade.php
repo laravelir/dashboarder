@@ -5,7 +5,7 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark">
             <a href=".">
-                <img src="./static/logo-white.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                <img src="{{ dashboarder_asset('/statics/img/logo-white.svg') }}" width="110" height="32" alt="Tabler" class="navbar-brand-image">
             </a>
         </h1>
         <div class="navbar-nav flex-row d-lg-none">
@@ -21,7 +21,7 @@
                             <path
                                 d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
                         </svg>
-                        Source code
+                        {{ dashboarder_lang('source_code') }}
                     </a>
                     <a href="https://github.com/sponsors/codecalm" class="btn btn-outline-white" target="_blank"
                         rel="noreferrer">
@@ -33,7 +33,7 @@
                             <path
                                 d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
                         </svg>
-                        Sponsor
+                        {{ dashboarder_lang('sponsor') }}
                     </a>
                 </div>
             </div>
@@ -56,11 +56,46 @@
                             </svg>
                         </span>
                         <span class="nav-link-title">
-                            Home
+                            {{ dashboarder_lang('menus.home') }}
                         </span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button"
+                        aria-expanded="false">
+                        <span class="nav-link-icon d-md-none d-lg-inline-block">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+                                <line x1="12" y1="12" x2="20" y2="7.5" />
+                                <line x1="12" y1="12" x2="12" y2="21" />
+                                <line x1="12" y1="12" x2="4" y2="7.5" />
+                                <line x1="16" y1="5.25" x2="8" y2="9.75" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-title">
+                            {{ dashboarder_lang('menus.users.title') }}
+                        </span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-menu-columns">
+                            <div class="dropdown-menu-column">
+                                <a class="dropdown-item" href="./maps-vector.html">
+                                    {{ dashboarder_lang('menus.users.all') }}
+                                </a>
+                            </div>
+                            <div class="dropdown-menu-column">
+                                <a class="dropdown-item" href="./markdown.html">
+                                    {{ dashboarder_lang('menus.users.new') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button"
                         aria-expanded="false">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -103,7 +138,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
                 <li class="nav-item fixed-bottom mb-2">
                     <a class="nav-link" href="https://github.com/laravelir/dashboarder">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -120,7 +155,7 @@
                             </svg>
                         </span>
                         <span class="nav-link-title">
-                            Documentation
+                        {{ dashboarder_lang('menus.documentation') }}
                         </span>
                     </a>
                 </li>

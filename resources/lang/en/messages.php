@@ -2,6 +2,8 @@
 
 return [
     'search' => 'Search',
+    'sponsor' => 'Sponsor',
+    'source_code' => 'Source Code',
     'notifications' => [
         'title' => 'notification',
     ],
@@ -14,6 +16,11 @@ return [
     'menus' => [
         'home' => 'Home',
         'documentation' => 'Documentation',
+        'users' => [
+            'title' => 'Users',
+            'all' => 'all users',
+            'new' => 'new user',
+        ],
     ],
     'crud' => [
         'all' => 'All',

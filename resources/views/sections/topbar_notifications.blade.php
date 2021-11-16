@@ -12,7 +12,7 @@
     <div class="dropdown-menu dropdown-menu-end dropdown-menu-card">
         <div class="card">
             <div class="card-body">
-                Notifications
+                {{ dashboarder_lang('notifications.title') }}
             </div>
         </div>
     </div>

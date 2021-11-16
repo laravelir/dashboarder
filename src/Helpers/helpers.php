@@ -39,18 +39,36 @@ if (!function_exists('dashboarder_dir')) {
     }
 }
 
-if (!function_exists('dashboarder_lang')) {
-    function dashboarder_lang($key, $locale = 'en')
+if (!function_exists('dashboarder_locale_flag')) {
+    function dashboarder_locale_flag()
     {
         switch (config('dashboarder.locales.default')) {
             case 'en':
-                return trans('dashboarder::messages.' . $key, [], $locale = 'en');
+                return config('dashboarder.locales.en.flag');
                 break;
             case 'fa':
-                return trans('dashboarder::messages.' . $key, [], $locale = 'fa');
+                return config('dashboarder.locales.fa.flag');
+                break;
+
+            default:
+                return config('dashboarder.locales.en.flag');
+                break;
+        }
+    }
+}
+
+if (!function_exists('dashboarder_lang')) {
+    function dashboarder_lang($key)
+    {
+        switch (config('dashboarder.locales.default')) {
+            case 'en':
+                return trans('dashboarder::messages.' . $key, [], 'en');
+                break;
+            case 'fa':
+                return trans('dashboarder::messages.' . $key, [], 'fa');
                 break;
             default:
-                return trans('dashboarder::messages.' . $key, [], $locale = 'en');
+                return trans('dashboarder::messages.' . $key, [], 'en');
                 break;
         }
     }

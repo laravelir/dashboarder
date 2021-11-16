@@ -9,6 +9,6 @@
     <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
         <a href="#" class="dropdown-item">Profile & account</a>
         <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">Logout</a>
+        <a href="#" class="dropdown-item">{{ dashboarder_lang('auth.logout') }}</a>
     </div>
 </div>
