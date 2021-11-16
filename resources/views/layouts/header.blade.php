@@ -9,6 +9,7 @@
 * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
 -->
 
+@dd(dashboarder_lang('search', 'fa'))
 <html lang="{{ dashboarder_locale() }}" dir="{{ dashboarder_dir() }}">
 
 <head>

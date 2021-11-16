@@ -38,3 +38,20 @@ if (!function_exists('dashboarder_dir')) {
         }
     }
 }
+
+if (!function_exists('dashboarder_lang')) {
+    function dashboarder_lang($key, $locale = 'en')
+    {
+        switch (config('dashboarder.locales.default')) {
+            case 'en':
+                return trans('dashboarder::messages.' . $key, [], $locale = 'en');
+                break;
+            case 'fa':
+                return trans('dashboarder::messages.' . $key, [], $locale = 'fa');
+                break;
+            default:
+                return trans('dashboarder::messages.' . $key, [], $locale = 'en');
+                break;
+        }
+    }
+}

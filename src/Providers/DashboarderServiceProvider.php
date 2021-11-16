@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravelir\Dashboarder\Facades\DashboarderFacade;
 use Laravelir\Dashboarder\Console\Commands\InstallPackageCommand;
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Routing\Router;
+
 
 class DashboarderServiceProvider extends ServiceProvider
 {
@@ -89,7 +92,7 @@ class DashboarderServiceProvider extends ServiceProvider
 
     private function registerTranslations()
     {
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'dashboarder');
+        $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'dashboarder');
 
         $this->publishes([
             __DIR__ . '/../../resources/lang' => resource_path('lang/laravelir/dashboarder'),
@@ -114,12 +117,12 @@ class DashboarderServiceProvider extends ServiceProvider
 
     protected function publishMigrations()
     {
-        if (empty(File::glob(database_path('migrations/*_create_varbox_tables.php')))) {
+        if (empty(File::glob(database_path('migrations/*_create_dashboarder_tables.php')))) {
             $timestamp = date('Y_m_d_His', time());
 
             $this->publishes([
-                __DIR__ . '/../database/migrations/create_varbox_tables.stub' => database_path() . "/migrations/{$timestamp}_create_varbox_tables.php",
-            ], 'varbox-migrations');
+                __DIR__ . '/../database/migrations/create_dashboarder_tables.stub' => database_path() . "/migrations/{$timestamp}_create_dashboarder_tables.php",
+            ], 'dashboarder-migrations');
         }
     }
 
@@ -132,5 +135,19 @@ class DashboarderServiceProvider extends ServiceProvider
         Blade::directive('config', function ($key) {
             return "<?php echo config('dashboarder.' . $key); ?>";
         });
+    }
+
+    protected function registerMiddlewares(Kernel $kernel, Router $router)
+    {
+        // global
+        $kernel->pushMiddleware(CapitalizeTitle::class);
+
+        // route middleware
+        // $router = $this->app->make(Router::class);
+        $router->aliasMiddleware('capitalize', CapitalizeTitle::class);
+
+        // group
+        $router->pushMiddlewareToGroup('web', CapitalizeTitle::class);
+
     }
 }

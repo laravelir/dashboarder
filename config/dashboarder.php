@@ -44,7 +44,7 @@ return [
     ],
 
     'locales' => [
-        'default' => 'en',
+        'default' => 'fa',
 
         'en' => [
             'title' => 'English',

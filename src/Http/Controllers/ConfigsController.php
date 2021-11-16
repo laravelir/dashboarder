@@ -34,7 +34,8 @@ class ConfigsController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+        // abort_if(Gate::denies('project_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
     }
 
     /**
