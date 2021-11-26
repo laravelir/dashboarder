@@ -2,8 +2,6 @@
 
 namespace Laravelir\Dashboarder\Http\Controllers;
 
-use Illuminate\Support\Facades\Config;
-
 class DashboardController extends BaseController
 {
     public function dashboard()

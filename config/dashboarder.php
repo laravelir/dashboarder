@@ -43,6 +43,16 @@ return [
         'dashboarder_views' => 'dashboarder',
     ],
 
+    'auth' => [
+        'guard' => config('auth.defaults.guard') ?? 'web',
+
+        /**
+         * Unauthorized user redirected to below route name
+         * you must enter route name
+         */
+        'unauthorized_redirect_route' => 'auth.login',
+    ],
+
     'locales' => [
         'default' => 'fa',
 

@@ -13,11 +13,15 @@ class CreateDashboarderTables extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('table')) {
-            Schema::create('tables', function (Blueprint $table) {
+        if (!Schema::hasTable('cruds')) {
+            Schema::create('cruds', function (Blueprint $table) {
                 $table->id();
                 $table->uuid('uuid');
-                $table->string('title');
+                $table->string('name')->unique(); // posts
+                $table->string('model')->unique(); // \App\Models\Post::class
+                $table->string('route_title')->unique(); // posts for resources routes
+                $table->string('icon')->nullable(); // icon for menus
+                $table->boolean('active')->default(true);
                 $table->timestamps();
             });
         }
@@ -43,6 +47,7 @@ class CreateDashboarderTables extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('cruds');
         Schema::dropIfExists('countries');
     }
 }
