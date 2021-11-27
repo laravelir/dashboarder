@@ -2,15 +2,16 @@
 
 namespace Laravelir\Dashboarder\Providers;
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\File;
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravelir\Dashboarder\Facades\DashboarderFacade;
 use Laravelir\Dashboarder\Console\Commands\InstallPackageCommand;
-use Illuminate\Contracts\Http\Kernel;
-use Illuminate\Routing\Router;
-
+use Laravelir\Dashboarder\Http\Livewire\Test;
+use Livewire\Livewire;
 
 class DashboarderServiceProvider extends ServiceProvider
 {
@@ -41,6 +42,7 @@ class DashboarderServiceProvider extends ServiceProvider
         $this->registerRoutes();
         $this->registerBladeDirectives();
         $this->publishStubs();
+        $this->registerLivewireComponents();
     }
 
     private function registerViews()
@@ -137,7 +139,7 @@ class DashboarderServiceProvider extends ServiceProvider
         });
     }
 
-    protected function registerMiddlewares(Kernel $kernel, Router $router)
+    protected function registerMiddleware(Kernel $kernel, Router $router)
     {
         // global
         $kernel->pushMiddleware(CapitalizeTitle::class);
@@ -148,6 +150,10 @@ class DashboarderServiceProvider extends ServiceProvider
 
         // group
         $router->pushMiddlewareToGroup('web', CapitalizeTitle::class);
+    }
 
+    public function registerLivewireComponents()
+    {
+        // Livewire::component('test', Test::class);
     }
 }
