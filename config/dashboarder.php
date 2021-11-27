@@ -87,7 +87,12 @@ return [
          * separators: | -
          *
          */
-        'title_separator' => '-'
+        'title_separator' => '-',
+
+        /**
+         * index dashboard routes in search engines
+         */
+        'indexed_site' => false,
     ],
 
     'default_pagination' => 8,

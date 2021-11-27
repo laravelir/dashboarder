@@ -26,4 +26,7 @@
     @include('dashboarder::partials.template-styles')
     <!-- End CSS files -->
 
+    <script defer src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js"></script>
+
+    <livewire:styles />
 </head>

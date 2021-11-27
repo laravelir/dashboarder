@@ -100,3 +100,4 @@ if(! function_exists('get_icon')) {
         }
         return $val ?? 'grid';
     }
+}

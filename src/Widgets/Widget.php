@@ -20,6 +20,7 @@ abstract class Widget
         protected $name,
         protected $type,
         protected $input_type = null,
+        protected $options = [],
     ) {}
 
     public function build()
