@@ -25,6 +25,8 @@ class DashboarderServiceProvider extends ServiceProvider
         $this->registerViews();
 
         $this->registerFacades();
+
+
     }
 
     /**

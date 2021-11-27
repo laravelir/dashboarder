@@ -37,6 +37,8 @@ php artisan migrate
 php artisan db:seed --class="DashboarderSeeders"
 ```
 
+php artisan storage:link
+
 #### Environment Variables
 in install command automatic appends the following to `.env` file:
 ```

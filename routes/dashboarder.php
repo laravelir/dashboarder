@@ -6,11 +6,10 @@ use Laravelir\Dashboarder\Http\Controllers\DashboardController;
 use Laravelir\Dashboarder\Http\Controllers\ConfigsController;
 
 Route::group([], function () {
-    Route::get('dashboard', [DashboardController::class, 'dashboard']);
+    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('index');
 
 
-
-    Route::group(['prefix' => 'settings'], function () {
+    Route::group(['prefix' => 'settings', 'as' => 'setting.'], function () {
         Route::resource('configs', ConfigsController::class);
     });
 

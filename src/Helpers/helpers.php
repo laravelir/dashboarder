@@ -1,5 +1,7 @@
 <?php
 
+use Laravelir\Dashboarder\Services\IconService;
+
 if (!function_exists('dashboarder_path')) {
     function dashboarder_path($path = null)
     {
@@ -18,6 +20,13 @@ if (!function_exists('dashboarder_locale')) {
     function dashboarder_locale()
     {
         return config('dashboarder.locales.default');
+    }
+}
+
+if (!function_exists('dashboarder_icon')) {
+    function dashboarder_icon($iconName)
+    {
+        echo IconService::render($iconName);
     }
 }
 
@@ -74,30 +83,3 @@ if (!function_exists('dashboarder_lang')) {
     }
 }
 
-
-if(! function_exists('get_icon')) {
-    function get_icon($type){
-        $array = [
-            'file-text' => ['posts', 'article', 'stories', 'post', 'articles', 'story'],
-            'users' => ['users', 'user', 'accounts', 'account', 'admins', 'admin', 'employee', 'employees'],
-            'file' => ['files', 'file'],
-            'mic' => ['episode', 'episodes', 'voices', 'voice'],
-            'book' => ['book', 'books'],
-            'tag' => ['tag', 'tags'],
-            'bookmark' => ['bookmarks', 'bookmark'],
-            'heart' => ['likes', 'like', 'favorite', 'favorites'],
-            'music' => ['musics', 'music', 'audios', 'audio'],
-            'bell' => ['notifications', 'notification'],
-            'layers' => ['request', 'requests'],
-            'settings' => ['settings', 'setting'],
-            'truck' => ['product', 'products', 'shops', 'shop'],
-            'message-circle' => ['comments', 'messages', 'pm', 'comment', 'message', 'chats', 'chat'],
-        ];
-        foreach ($array as $key => $arrayValues){
-            if(in_array($type, $arrayValues)){
-                $val = $key;
-            }
-        }
-        return $val ?? 'grid';
-    }
-}

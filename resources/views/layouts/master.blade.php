@@ -4,6 +4,7 @@
     <div class="wrapper">
         @include('dashboarder::sections.sidebar')
         @include('dashboarder::sections.topbar')
+
         <div class="page-wrapper">
             <div class="container-xl">
                 <!-- Page title -->
@@ -53,6 +54,8 @@
                 </div>
             </div>
             <div class="page-body">
+        @yield('content')
+
                 <div class="container-xl">
                     <div class="row row-deck row-cards">
                         <div class="col-sm-6 col-lg-3">

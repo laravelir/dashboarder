@@ -29,6 +29,13 @@ return [
         'controllers' => 'Http\Controllers',
 
         /**
+         *  Path that contains Livewire
+         *
+         *  application_namespace + \ + controllers + \ + livewire ==> App\Http\Controllers\Livewire
+         */
+        'livewire' => 'Http\Livewire',
+
+        /**
          *  Path that contains Http Requests
          *
          *  application_namespace + \ + requests ==> App\Http\Requests
@@ -43,6 +50,10 @@ return [
         'dashboarder_views' => 'dashboarder',
     ],
 
+    'database' => [
+
+    ],
+
     'auth' => [
         'guard' => config('auth.defaults.guard') ?? 'web',
 
@@ -53,8 +64,27 @@ return [
         'unauthorized_redirect_route' => 'auth.login',
     ],
 
+    'dashboard' => [
+
+        'menus' => [
+            'home' => [
+                // 'title' => dashboarder_lang('messages.menus.home'),
+                'route'         => 'dashboarder.index',
+                'classes'       => 'class-full-of-rum',
+                'icon_class'    => 'home',
+            ],
+            'Home' => [
+                'route'         => '/',
+                'icon_class'    => 'voyager-home',
+                'target_blank'  => true,
+            ],
+        ],
+    ],
+
     'locales' => [
         'default' => 'fa',
+
+        'multilingual' => false,
 
         'en' => [
             'title' => 'English',
@@ -77,6 +107,9 @@ return [
             ['title' => 'LARAVEL', 'link' => 'https://laravel.com/'],
             ['title' => 'CREATIVE TIM', 'link' => 'https://www.creative-tim.com/'],
         ],
+
+        'additional_css' => '',
+        'additional_js' => '',
     ],
 
     'seo' => [
@@ -96,4 +129,12 @@ return [
     ],
 
     'default_pagination' => 8,
+
+    'allowed_mimetypes' => [
+        'image/jpeg',
+        'image/png',
+        'image/gif',
+        'image/bmp',
+        'video/mp4',
+   ],
 ];

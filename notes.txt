@@ -1,0 +1,9 @@
+add install with dummy data
+
+assign admin to exist user
+or create new user
+
+make Dashboarder User model for extending admin users
+
+
+add lock page after a few minutes
