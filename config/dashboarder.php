@@ -50,9 +50,7 @@ return [
         'dashboarder_views' => 'dashboarder',
     ],
 
-    'database' => [
-
-    ],
+    'database' => [],
 
     'auth' => [
         'guard' => config('auth.defaults.guard') ?? 'web',
@@ -62,21 +60,27 @@ return [
          * you must enter route name
          */
         'unauthorized_redirect_route' => 'auth.login',
+
+        'add_default_role_on_register' => true,
+        'default_role'                 => 'user',
+        'default_avatar'               => 'users/default.png',
     ],
 
     'dashboard' => [
 
         'menus' => [
             'home' => [
-                // 'title' => dashboarder_lang('messages.menus.home'),
-                'route'         => 'dashboarder.index',
-                'classes'       => 'class-full-of-rum',
-                'icon_class'    => 'home',
+                'title' => 'Home',
+                'route' => 'dashboarder.index',
+                'classes' => 'class-full-of-rum',
+                'icon' => 'home',
+                'target_blank' => false,
             ],
-            'Home' => [
-                'route'         => '/',
-                'icon_class'    => 'voyager-home',
-                'target_blank'  => true,
+            'site' => [
+                'title' => 'Site',
+                'route' => '/',
+                'icon' => 'at',
+                'target_blank' => true,
             ],
         ],
     ],
@@ -136,5 +140,13 @@ return [
         'image/gif',
         'image/bmp',
         'video/mp4',
-   ],
+    ],
+
+
+    'settings' => [
+        // Enables Laravel cache method for
+        // storing cache values between requests
+        'cache' => false,
+    ],
+
 ];

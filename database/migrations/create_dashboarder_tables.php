@@ -26,6 +26,14 @@ class CreateDashboarderTables extends Migration
             });
         }
 
+        if (Schema::hasTable('users')) {
+            Schema::table('users', function (Blueprint $table) {
+                if (!Schema::hasColumn('users', 'uuid')) {
+                    $table->uuid('uuid')->after('id');
+                }
+            });
+        }
+
         if (!Schema::hasTable('countries')) {
             Schema::create('countries', function (Blueprint $table) {
                 $table->increments('id');
@@ -49,5 +57,11 @@ class CreateDashboarderTables extends Migration
     {
         Schema::dropIfExists('cruds');
         Schema::dropIfExists('countries');
+
+        if (Schema::hasColumn('users', 'uuid')) {
+            Schema::table('users', function ($table) {
+                $table->dropColumn('uuid');
+            });
+        }
     }
 }
