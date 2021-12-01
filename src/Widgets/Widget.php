@@ -23,8 +23,5 @@ abstract class Widget
         protected $options = [],
     ) {}
 
-    public function build()
-    {
-        # code...
-    }
+    abstract public function render();
 }
