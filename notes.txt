@@ -7,3 +7,6 @@ make Dashboarder User model for extending admin users
 
 
 add lock page after a few minutes
+
+
+advanced : backups, file manager, logs, seo
