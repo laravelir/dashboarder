@@ -1,3 +1,0 @@
-<div>
-   @dd('test')
-</div>

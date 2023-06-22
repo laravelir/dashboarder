@@ -42,9 +42,8 @@
         }
     },
     "require": {
-        "php": ">=7.4|^8.0",
-        "livewire/livewire": "dev-master"
+        "php": ">=7.4|^8.0"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "license": "MIT"
 }

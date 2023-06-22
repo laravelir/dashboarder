@@ -13,8 +13,8 @@ class CreateDashboarderTables extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('cruds')) {
-            Schema::create('cruds', function (Blueprint $table) {
+        if (!Schema::hasTable('dashboarder_cruds')) {
+            Schema::create('dashboarder_cruds', function (Blueprint $table) {
                 $table->id();
                 $table->uuid('uuid');
                 $table->string('name')->unique(); // posts
